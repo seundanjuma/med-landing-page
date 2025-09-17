@@ -84,7 +84,7 @@ function Nav() {
               <Instagram className="h-4 w-4" />
             </div>
             <div className="text-sm font-semibold tracking-tight">
-              Done‑For‑You Instagram for Medical Practices
+              numa socials 
             </div>
           </div>
           <div className="hidden items-center gap-6 md:flex">
@@ -124,18 +124,18 @@ function Hero() {
           <div>
             <Tag>Attention: busy doctors & clinic owners</Tag>
             <h1 className="mt-5 text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
-              We keep your practice visible on Instagram —
+              We keep your practice visible on Instagram
               <span className="block text-white/80">
                 without you lifting a finger.
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-base text-white/70">
-              A done‑for‑you content calendar and{" "}
+              Done‑For‑You Instagram for Medical Practices; A content calendar and{" "}
               <span className="font-semibold text-white">
                 4 professional posts per week
               </span>
               . Your page looks credible, builds trust, and quietly attracts new
-              patients — while you focus on care, not content.
+              patients while you focus on care, not content.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Button href="#book" icon={ArrowRight}>
