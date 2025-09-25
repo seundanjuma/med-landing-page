@@ -582,7 +582,7 @@ function FinalCTA() {
               </Button>
             </div>
             <p className="mt-4 text-xs text-white/50">
-              We work with only 3–4 practices at a time to maintain quality.
+              We work with only 4–5 practices at a time to maintain quality.
             </p>
           </div>
         </div>
