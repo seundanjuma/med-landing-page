@@ -213,90 +213,182 @@ function SocialProof() {
     </section>
   );
 }
-
 function Portfolio() {
   const portfolioItems = [
     {
       title: "Dental Practice - West Coast",
       specialty: "General Dentistry",
       image:
-        "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=400&fit=crop&crop=center", // Replace with your actual work
+        "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=400&fit=crop&crop=center",
       results: "2.3x follower growth in 90 days",
-      link: "#", // Replace with case study link
+      link: "#",
     },
     {
       title: "Dermatology Clinic - Miami",
       specialty: "Cosmetic Dermatology",
       image:
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=400&fit=crop&crop=center", // Replace with your actual work
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=400&fit=crop&crop=center",
       results: "15+ new patient inquiries/month",
-      link: "#", // Replace with case study link
+      link: "#",
     },
     {
       title: "Chiropractic Office - Chicago",
       specialty: "Sports Medicine",
       image:
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop&crop=center", // Replace with your actual work
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop&crop=center",
       results: "180% increase in appointment bookings",
-      link: "#", // Replace with case study link
+      link: "#",
+    },
+    {
+      title: "Plastic Surgery - Beverly Hills",
+      specialty: "Cosmetic Surgery",
+      image:
+        "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop&crop=center",
+      results: "5x consultation requests",
+      link: "#",
+    },
+    {
+      title: "Physical Therapy - Austin",
+      specialty: "Sports Rehabilitation",
+      image:
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop&crop=center",
+      results: "95% patient retention rate",
+      link: "#",
+    },
+    {
+      title: "Cardiology Practice - NYC",
+      specialty: "Heart Health",
+      image:
+        "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=400&fit=crop&crop=center",
+      results: "200+ educational post saves",
+      link: "#",
     },
   ];
 
   return (
-    <section className="py-16 border-b border-white/5">
+    <section className="py-16 border-b border-white/5 overflow-hidden">
       <Container>
         <div className="text-center mb-12">
           <h2 className="text-2xl font-semibold sm:text-3xl">
-            See the quality of work your practice gets
+            Our recent work
           </h2>
-          <p className="mt-3 max-w-2xl mx-auto text-white/70">
-            Real Instagram content we've created for medical practices like
-            yours
-          </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {portfolioItems.map((item, index) => (
-            <PortfolioCard key={index} {...item} />
-          ))}
-        </div>
+        {/* Creative Carousel */}
+        <div className="relative">
+          {/* Scrollable Container */}
+          <div
+            className="flex gap-6 overflow-x-auto scrollbar-hide pb-4 px-4"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            <style jsx>{`
+              .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+              }
+            `}</style>
 
-        <div className="text-center mt-10">
+            {portfolioItems.map((item, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 w-80"
+                style={{
+                  animation: `float ${3 + index * 0.5}s ease-in-out infinite`,
+                  animationDelay: `${index * 0.2}s`,
+                }}
+              >
+                <PortfolioCard {...item} />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="text-center mt-8">
           <Button href="#" variant="secondary" icon={ChevronRight}>
             View full portfolio
           </Button>
         </div>
       </Container>
+
+      {/* CSS Animations */}
+      <style jsx>{`
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+
+        @keyframes pulse {
+          0%,
+          100% {
+            opacity: 0.2;
+          }
+          50% {
+            opacity: 0.8;
+          }
+        }
+      `}</style>
     </section>
   );
 }
 
 function PortfolioCard({ title, specialty, image, results, link }) {
   return (
-    <div className="group rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-all duration-300">
-      <div className="aspect-square rounded-2xl overflow-hidden mb-4 bg-gradient-to-br from-white/10 to-white/5">
+    <div className="group rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-white/10">
+      <div className="relative aspect-square rounded-2xl overflow-hidden mb-6 bg-gradient-to-br from-white/10 to-white/5">
+        {/* Floating overlay effect */}
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+
         <img
           src={image}
           alt={`${title} Instagram content example`}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
         />
+
+        {/* Instagram-style overlay */}
+        <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20">
+          <Instagram className="h-4 w-4 text-white" />
+        </div>
       </div>
 
-      <div className="space-y-2">
-        <div className="text-sm text-white/60">{specialty}</div>
-        <div className="text-lg font-medium">{title}</div>
-        <div className="text-sm text-white/80 flex items-center gap-2">
-          <BarChart2 className="h-4 w-4" />
+      <div className="space-y-3">
+        <div className="flex items-center justify-between">
+          <div className="text-sm text-white/60 bg-white/5 px-3 py-1 rounded-full border border-white/10">
+            {specialty}
+          </div>
+          <div className="flex gap-1">
+            {[...Array(3)].map((_, i) => (
+              <div
+                key={i}
+                className="w-1.5 h-1.5 bg-white/30 rounded-full group-hover:bg-white/60 transition-colors duration-300"
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="text-lg font-medium group-hover:text-white transition-colors duration-300">
+          {title}
+        </div>
+
+        <div className="text-sm text-white/80 flex items-center gap-2 bg-white/5 p-3 rounded-xl border border-white/5">
+          <div className="p-1 bg-white/10 rounded-full">
+            <BarChart2 className="h-3 w-3" />
+          </div>
           {results}
         </div>
       </div>
 
-      <div className="mt-4">
+      <div className="mt-6 pt-4 border-t border-white/10">
         <a
           href={link}
-          className="text-sm text-white/70 hover:text-white flex items-center gap-2 group-hover:gap-3 transition-all"
+          className="text-sm text-white/70 hover:text-white flex items-center gap-2 group-hover:gap-3 transition-all duration-300 font-medium"
         >
-          View case study <ArrowRight className="h-4 w-4" />
+          View case study
+          <div className="p-1 bg-white/10 rounded-full group-hover:bg-white/20 transition-colors duration-300">
+            <ArrowRight className="h-3 w-3" />
+          </div>
         </a>
       </div>
     </div>
@@ -326,10 +418,6 @@ function PainPoints() {
         <h2 className="text-center text-2xl font-semibold sm:text-3xl">
           This is probably what you’re dealing with
         </h2>
-        <p className="mx-auto mt-3 max-w-2xl text-center text-white/70">
-          The problem isn’t Instagram. It’s trying to do marketing on top of
-          patient care.
-        </p>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((it) => (
             <div
@@ -342,6 +430,10 @@ function PainPoints() {
             </div>
           ))}
         </div>
+        <p className="mx-auto mt-3 max-w-2xl text-center text-white/70 py-10">
+          The problem isn’t Instagram. It’s trying to do marketing on top of
+          patient care.
+        </p>
       </Container>
     </section>
   );
