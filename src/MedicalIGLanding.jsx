@@ -430,9 +430,9 @@ function PainPoints() {
             </div>
           ))}
         </div>
-        <p className="mx-auto mt-3 max-w-2xl text-center text-white/70 py-10">
-          The problem isn’t Instagram. It’s trying to do marketing on top of
-          patient care.
+        <p className="mx-auto mt-3 max-w-2xl text-center text-white/70 py-5">
+          <em>The problem isn’t Instagram. It’s trying to do marketing on top of
+          patient care!</em>
         </p>
       </Container>
     </section>
