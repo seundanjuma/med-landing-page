@@ -29,6 +29,7 @@ export default function MedicalIGLanding() {
       <Nav />
       <Hero />
       <SocialProof />
+      <Portfolio />
       <PainPoints />
       <Solution />
       <Process />
@@ -84,7 +85,7 @@ function Nav() {
               <Instagram className="h-4 w-4" />
             </div>
             <div className="text-sm font-semibold tracking-tight">
-              numa socials 
+              numa socials
             </div>
           </div>
           <div className="hidden items-center gap-6 md:flex">
@@ -130,7 +131,8 @@ function Hero() {
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-base text-white/70">
-              Done‑For‑You Instagram for Medical Practices; A content calendar and{" "}
+              Done‑For‑You Instagram for Medical Practices; A content calendar
+              and{" "}
               <span className="font-semibold text-white">
                 4 professional posts per week
               </span>
@@ -212,6 +214,94 @@ function SocialProof() {
   );
 }
 
+function Portfolio() {
+  const portfolioItems = [
+    {
+      title: "Dental Practice - West Coast",
+      specialty: "General Dentistry",
+      image:
+        "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=400&fit=crop&crop=center", // Replace with your actual work
+      results: "2.3x follower growth in 90 days",
+      link: "#", // Replace with case study link
+    },
+    {
+      title: "Dermatology Clinic - Miami",
+      specialty: "Cosmetic Dermatology",
+      image:
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=400&fit=crop&crop=center", // Replace with your actual work
+      results: "15+ new patient inquiries/month",
+      link: "#", // Replace with case study link
+    },
+    {
+      title: "Chiropractic Office - Chicago",
+      specialty: "Sports Medicine",
+      image:
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop&crop=center", // Replace with your actual work
+      results: "180% increase in appointment bookings",
+      link: "#", // Replace with case study link
+    },
+  ];
+
+  return (
+    <section className="py-16 border-b border-white/5">
+      <Container>
+        <div className="text-center mb-12">
+          <h2 className="text-2xl font-semibold sm:text-3xl">
+            See the quality of work your practice gets
+          </h2>
+          <p className="mt-3 max-w-2xl mx-auto text-white/70">
+            Real Instagram content we've created for medical practices like
+            yours
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {portfolioItems.map((item, index) => (
+            <PortfolioCard key={index} {...item} />
+          ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <Button href="#" variant="secondary" icon={ChevronRight}>
+            View full portfolio
+          </Button>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function PortfolioCard({ title, specialty, image, results, link }) {
+  return (
+    <div className="group rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-all duration-300">
+      <div className="aspect-square rounded-2xl overflow-hidden mb-4 bg-gradient-to-br from-white/10 to-white/5">
+        <img
+          src={image}
+          alt={`${title} Instagram content example`}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+
+      <div className="space-y-2">
+        <div className="text-sm text-white/60">{specialty}</div>
+        <div className="text-lg font-medium">{title}</div>
+        <div className="text-sm text-white/80 flex items-center gap-2">
+          <BarChart2 className="h-4 w-4" />
+          {results}
+        </div>
+      </div>
+
+      <div className="mt-4">
+        <a
+          href={link}
+          className="text-sm text-white/70 hover:text-white flex items-center gap-2 group-hover:gap-3 transition-all"
+        >
+          View case study <ArrowRight className="h-4 w-4" />
+        </a>
+      </div>
+    </div>
+  );
+}
 function PainPoints() {
   const items = [
     {
@@ -329,7 +419,7 @@ function MiniCard({ icon: Icon, title, desc }) {
 function Process() {
   const steps = [
     {
-      title: "Kickoff call (15–20 min)",
+      title: "Kickoff call (15-20 min)",
       desc: "We learn your services, tone, and goals. You share any assets/logos.",
     },
     {
@@ -338,10 +428,10 @@ function Process() {
     },
     {
       title: "Design + write",
-      desc: "We create your weekly posts and captions. You approve — we refine.",
+      desc: "We create your weekly posts and captions... and design them.",
     },
     {
-      title: "Post + learn",
+      title: "Post, learn, refine",
       desc: "We schedule (if included) and send a simple report. We iterate next month.",
     },
   ];
@@ -600,7 +690,9 @@ function Footer() {
             <div className="grid h-8 w-8 place-items-center rounded-xl bg-white text-neutral-900">
               <Instagram className="h-4 w-4" />
             </div>
-            <div>numa socials - Done‑For‑You Instagram for Medical Practices</div>
+            <div>
+              numa socials - Done‑For‑You Instagram for Medical Practices
+            </div>
           </div>
           <div className="flex items-center gap-6">
             <a href="#process" className="hover:text-white">
