@@ -122,7 +122,7 @@ function Hero() {
       <Container>
         <div className="grid items-center gap-10 py-20 lg:grid-cols-2 lg:py-28">
           <div>
-            <Tag>Attention: busy doctors & clinic owners</Tag>
+            <Tag>Instagram for medical practices</Tag>
             <h1 className="mt-5 text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
               We keep your practice visible on Instagram
               <span className="block text-white/80">
@@ -600,7 +600,7 @@ function Footer() {
             <div className="grid h-8 w-8 place-items-center rounded-xl bg-white text-neutral-900">
               <Instagram className="h-4 w-4" />
             </div>
-            <div>Done‑For‑You Instagram for Medical Practices</div>
+            <div>numa socials - Done‑For‑You Instagram for Medical Practices</div>
           </div>
           <div className="flex items-center gap-6">
             <a href="#process" className="hover:text-white">
