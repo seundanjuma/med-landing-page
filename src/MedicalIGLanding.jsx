@@ -124,7 +124,7 @@ function Hero() {
         <div className="grid items-center gap-10 py-20 lg:grid-cols-2 lg:py-28">
           <div>
             <Tag>Instagram for medical practices</Tag>
-            <h1 className="mt-5 text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
+            <h1 className="font-display mt-5 text-3xl leading-tight sm:text-4xl md:text-5xl">
               We keep your practice visible on Instagram
               <span className="block text-white/80">
                 without you lifting a finger.
@@ -269,7 +269,7 @@ function Portfolio() {
     <section className="py-16 border-b border-white/5 overflow-hidden">
       <Container>
         <div className="text-center mb-12">
-          <h2 className="text-2xl font-semibold sm:text-3xl">
+          <h2 className="font-display text-2xl sm:text-3xl">
             Our recent work
           </h2>
         </div>
@@ -415,7 +415,7 @@ function PainPoints() {
   return (
     <section className="py-20">
       <Container>
-        <h2 className="text-center text-2xl font-semibold sm:text-3xl">
+        <h2 className="font-display text-center text-2xl sm:text-3xl">
           This is probably what you’re dealing with
         </h2>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -431,8 +431,10 @@ function PainPoints() {
           ))}
         </div>
         <p className="mx-auto mt-3 max-w-2xl text-center text-white/70 py-5">
-          <em>The problem isn’t Instagram. It’s trying to do marketing on top of
-          patient care!</em>
+          <em>
+            The problem isn’t Instagram. It’s trying to do marketing on top of
+            patient care!
+          </em>
         </p>
       </Container>
     </section>
@@ -452,7 +454,7 @@ function Solution() {
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
-            <h3 className="text-2xl font-semibold sm:text-3xl">
+            <h3 className="font-display text-2xl sm:text-3xl">
               Here’s how we fix it
             </h3>
             <p className="mt-3 max-w-xl text-white/70">
@@ -530,7 +532,7 @@ function Process() {
   return (
     <section id="process" className="py-20">
       <Container>
-        <h3 className="text-2xl font-semibold sm:text-3xl">
+        <h3 className="font-display text-center text-2xl sm:text-3xl">
           Simple, proven process
         </h3>
         <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -600,7 +602,7 @@ function Plans() {
     >
       <Container>
         <div className="mx-auto max-w-3xl text-center">
-          <h3 className="text-2xl font-semibold sm:text-3xl">
+          <h3 className="font-display text-2xl sm:text-3xl">
             Choose your plan
           </h3>
           <p className="mt-2 text-white/70">
@@ -655,7 +657,7 @@ function RoiMath() {
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
-            <h3 className="text-2xl font-semibold sm:text-3xl">
+            <h3 className="font-display text-2xl sm:text-3xl">
               ROI math (simple & conservative)
             </h3>
             <p className="mt-2 text-white/70">
@@ -725,7 +727,7 @@ function FAQs() {
       className="border-y border-white/5 bg-neutral-900/30 py-20"
     >
       <Container>
-        <h3 className="text-2xl font-semibold sm:text-3xl">FAQs</h3>
+        <h3 className="font-display text-2xl sm:text-3xl">FAQs</h3>
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           {faqs.map((f) => (
             <div
@@ -748,7 +750,7 @@ function FinalCTA() {
       <Container>
         <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 to-transparent p-8 text-center">
           <div className="mx-auto max-w-2xl">
-            <h3 className="text-2xl font-semibold sm:text-3xl">
+            <h3 className="font-display text-2xl sm:text-3xl">
               Ready to free up your time and keep your clinic visible?
             </h3>
             <p className="mt-2 text-white/70">
