@@ -35,6 +35,7 @@ export default function MedicalIGLanding() {
       <Nav />
       <Hero scrollY={scrollY} />
       <Portfolio />
+      <PainPoints />
     </div>
   );
 }
@@ -136,7 +137,7 @@ function Hero({ scrollY }) {
     scrollProgress > 0.9 ? 1.0 + ((scrollProgress - 0.9) / 0.1) * 0.1 : 1.0;
 
   return (
-    <section className="relative overflow-hidden bg-white pt-20 pb-16 lg:pt-32 lg:pb-24">
+    <section className="relative overflow-hidden bg-white pt-20 pb-16 lg:pt-32 lg:pb-32">
       <Container>
         <div className="mx-auto max-w-4xl text-center">
           <div
@@ -182,48 +183,49 @@ function Hero({ scrollY }) {
             </Button>
           </div>
         </div>
+      </Container>
 
-        <div className="mt-20">
+      {/* Video Section - Full Width */}
+      <div className="mt-20 px-4">
+        <div
+          className="relative mx-auto transition-transform duration-500 ease-out"
+          style={{
+            transform: `scale(${containerScale})`,
+            maxWidth: "calc(100vw - 30px)",
+            width: "100%",
+          }}
+        >
           <div
-            className="relative mx-auto transition-transform duration-500 ease-out"
+            className="overflow-hidden rounded-3xl bg-gradient-to-br from-gray-200 to-gray-300"
             style={{
-              transform: `scale(${containerScale})`,
-              maxWidth: "calc(100vw - 30px)",
-              width: "100%",
+              paddingBottom: "56.25%",
+              position: "relative",
+              boxShadow: "0 1px 3px rgba(0, 0, 0, 0.05)",
             }}
           >
             <div
-              className="overflow-hidden rounded-3xl bg-gradient-to-br from-gray-200 to-gray-300"
+              className="absolute inset-0 flex items-center justify-center transition-transform duration-300 ease-out"
               style={{
-                paddingBottom: "56.25%",
-                position: "relative",
-                boxShadow: "0 1px 3px rgba(0, 0, 0, 0.05)",
+                transform: `scale(${videoScale})`,
               }}
             >
-              <div
-                className="absolute inset-0 flex items-center justify-center transition-transform duration-300 ease-out"
-                style={{
-                  transform: `scale(${videoScale})`,
-                }}
-              >
-                <div className="text-gray-400 text-center">
-                  <Play className="h-16 w-16 mx-auto mb-4 opacity-50" />
-                  <p className="text-sm">
-                    Video - scales 0.55→1.0, then zooms to 1.1
-                  </p>
-                </div>
+              <div className="text-gray-400 text-center">
+                <Play className="h-16 w-16 mx-auto mb-4 opacity-50" />
+                <p className="text-sm">
+                  Video - scales 0.55→1.0, then zooms to 1.1
+                </p>
               </div>
             </div>
+          </div>
 
-            <div className="absolute bottom-6 left-6 right-6 flex flex-wrap items-center gap-4">
-              <FeaturePill icon={Instagram} text="Content Calendar" />
-              <FeaturePill icon={TrendingUp} text="Page optimization" />
-              <FeaturePill icon={Image} text="Story templates" />
-              <FeaturePill icon={FileText} text="Monthly report" />
-            </div>
+          <div className="absolute bottom-6 left-6 right-6 flex flex-wrap items-center justify-between gap-4">
+            <FeaturePill icon={Instagram} text="Content Calendar" />
+            <FeaturePill icon={TrendingUp} text="Page optimization" />
+            <FeaturePill icon={Image} text="Story templates" />
+            <FeaturePill icon={FileText} text="Monthly report" />
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }
@@ -350,6 +352,83 @@ function PortfolioCard({ practice, label, icon: Icon, image }) {
           <ChevronRight className="h-4 w-4" />
         </a>
       </div>
+    </div>
+  );
+}
+
+function PainPoints() {
+  const painPoints = [
+    {
+      title: "No time for content",
+      description: "Your clinic is busy. Marketing slips. Consistency dies.",
+    },
+    {
+      title: "Design looks DIY",
+      description: "Patients judge credibility by visuals and clarity.",
+    },
+    {
+      title: "No content plan",
+      description: "Random posting ≠ growth. You need a rhythm.",
+    },
+  ];
+
+  return (
+    <section className="py-20 bg-white">
+      <Container>
+        <div className="text-center mb-16">
+          <h2
+            className="text-gray-900"
+            style={{ fontSize: "48px", fontWeight: 500 }}
+          >
+            <span>This is probably </span>
+            <span
+              style={{
+                fontFamily: "Instrument Serif, serif",
+                fontStyle: "italic",
+              }}
+              className="text-orange-500"
+            >
+              what you're dealing with
+            </span>
+          </h2>
+          <p className="mt-4 text-gray-600" style={{ fontSize: "16px" }}>
+            The problem isn't Instagram. It's trying to do marketing on top of
+            patient care.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {painPoints.map((point, index) => (
+            <PainPointCard key={index} {...point} />
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function PainPointCard({ title, description }) {
+  return (
+    <div className="text-center">
+      <div
+        className="rounded-3xl bg-gradient-to-br from-gray-200 to-gray-300 mb-6 overflow-hidden"
+        style={{ paddingBottom: "75%", position: "relative" }}
+      >
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-gray-400 text-sm">GIF/Lottie animation</div>
+        </div>
+      </div>
+
+      <h3
+        className="text-gray-900 mb-2"
+        style={{ fontSize: "20px", fontWeight: 500 }}
+      >
+        {title}
+      </h3>
+
+      <p className="text-gray-600" style={{ fontSize: "16px" }}>
+        {description}
+      </p>
     </div>
   );
 }
