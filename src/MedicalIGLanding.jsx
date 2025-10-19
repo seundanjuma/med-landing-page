@@ -19,6 +19,8 @@ import {
   BookOpen,
   Eye,
   Heart,
+  Copy,
+  MoveUpRight,
 } from "lucide-react";
 
 export default function MedicalIGLanding() {
@@ -36,6 +38,13 @@ export default function MedicalIGLanding() {
       <Hero scrollY={scrollY} />
       <Portfolio />
       <PainPoints />
+      <Solution />
+      <Process />
+      <Pricing />
+      <ROIMath />
+      <FAQs />
+      <FinalCTA />
+      <Footer />
     </div>
   );
 }
@@ -430,5 +439,674 @@ function PainPointCard({ title, description }) {
         {description}
       </p>
     </div>
+  );
+}
+
+function Solution() {
+  const features = [
+    "Done-for-you monthly content calendar",
+    "4 professionally designed posts per week",
+    "Captions written in your voice",
+    "Optional: scheduling + posting handled",
+    "Monthly performance review & tweaks",
+  ];
+
+  const cards = [
+    {
+      title: "Built for healthcare",
+      description: "Language, ethics, and visuals tailored to your specialty.",
+    },
+    {
+      title: "Reels option",
+      description: "Add 2 reels/month on Growth for momentum.",
+    },
+    {
+      title: "Handoff ready",
+      description: "We can schedule + post so you don't have to.",
+    },
+    {
+      title: "Monthly report",
+      description: "See what worked. We iterate monthly.",
+    },
+  ];
+
+  return (
+    <section className="py-20 bg-gray-50">
+      <Container>
+        <div className="text-center mb-16">
+          <h2
+            className="text-gray-900"
+            style={{ fontSize: "48px", fontWeight: 500 }}
+          >
+            <span>Here's </span>
+            <span
+              style={{
+                fontFamily: "Instrument Serif, serif",
+                fontStyle: "italic",
+              }}
+              className="text-orange-500"
+            >
+              how we fix it
+            </span>
+          </h2>
+          <p
+            className="mt-4 text-gray-600 max-w-3xl mx-auto"
+            style={{ fontSize: "16px" }}
+          >
+            We turn Instagram into a simple, predictable channel for credibility
+            and patient acquisition, with almost no time demanded from you.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {cards.map((card, index) => (
+            <SolutionCard key={index} {...card} />
+          ))}
+        </div>
+
+        <div className="flex justify-center">
+          <div className="inline-block">
+            {features.map((feature, index) => (
+              <div key={index} className="flex items-center gap-3 mb-4">
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gray-300 flex items-center justify-center">
+                  <Check className="h-4 w-4 text-gray-600" />
+                </div>
+                <span className="text-gray-900" style={{ fontSize: "16px" }}>
+                  {feature}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function SolutionCard({ title, description }) {
+  return (
+    <div className="text-center">
+      <div
+        className="rounded-3xl bg-gradient-to-br from-gray-200 to-gray-300 mb-6 overflow-hidden"
+        style={{ paddingBottom: "75%", position: "relative" }}
+      >
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-gray-400 text-sm">Card visual</div>
+        </div>
+      </div>
+
+      <h3
+        className="text-gray-900 mb-2"
+        style={{ fontSize: "18px", fontWeight: 500 }}
+      >
+        {title}
+      </h3>
+
+      <p className="text-gray-600" style={{ fontSize: "14px" }}>
+        {description}
+      </p>
+    </div>
+  );
+}
+
+function Process() {
+  const steps = [
+    {
+      number: "01",
+      title: "Kickoff call (15–20 min)",
+      description:
+        "We learn your services, tone, and goals. You share any assets/logos.",
+    },
+    {
+      number: "02",
+      title: "Plan the month",
+      description:
+        "We build a content calendar around education, social proof, FAQs, and promos.",
+    },
+    {
+      number: "03",
+      title: "Design + write",
+      description:
+        "We create your weekly posts and captions... and design them.",
+    },
+    {
+      number: "04",
+      title: "Post, learn, refine",
+      description:
+        "We schedule (if included) and send a simple report. We iterate next month.",
+    },
+  ];
+
+  return (
+    <section className="py-20 bg-white">
+      <Container>
+        <div className="text-center mb-12">
+          <h2
+            className="text-gray-900"
+            style={{ fontSize: "48px", fontWeight: 500 }}
+          >
+            <span>Simple, </span>
+            <span
+              style={{
+                fontFamily: "Instrument Serif, serif",
+                fontStyle: "italic",
+              }}
+              className="text-orange-500"
+            >
+              proven process
+            </span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((step, index) => (
+            <ProcessCard key={index} {...step} />
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function ProcessCard({ number, title, description }) {
+  return (
+    <div
+      className="rounded-3xl p-8 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1"
+      style={{
+        background:
+          "linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%)",
+        border: "1px solid rgba(255, 255, 255, 0.3)",
+        boxShadow: "0 8px 32px rgba(0, 0, 0, 0.06)",
+      }}
+    >
+      <div
+        className="text-gray-400 mb-4"
+        style={{ fontSize: "14px", fontWeight: 500 }}
+      >
+        Step {number}
+      </div>
+
+      <h3
+        className="text-gray-900 mb-3"
+        style={{ fontSize: "20px", fontWeight: 500 }}
+      >
+        {title}
+      </h3>
+
+      <p
+        className="text-gray-600"
+        style={{ fontSize: "16px", lineHeight: "1.6" }}
+      >
+        {description}
+      </p>
+    </div>
+  );
+}
+
+function Pricing() {
+  const plans = [
+    {
+      name: "Essentials",
+      tagline: "Stay visible, credible, and consistent.",
+      price: "$399/mo",
+      features: [
+        "16 professional posts/month",
+        "Monthly content calendar",
+        "1 round of revisions",
+        "Ready-to-post files delivered",
+      ],
+    },
+    {
+      name: "Hands-Off",
+      tagline: "Never worry about content again.",
+      price: "$699/mo",
+      features: [
+        "Everything in Essentials",
+        "Captions written for every post",
+        "Scheduling + posting done for you",
+        "Basic monthly performance report",
+        "2 rounds of revisions",
+      ],
+    },
+    {
+      name: "Growth",
+      tagline: "For high-value, growth-focused practices.",
+      price: "$1,199/mo",
+      features: [
+        "Everything in Hands-Off",
+        "2 reels/month + story templates",
+        "Deeper analytics & recommendations",
+        "Optional add-on: ad management",
+      ],
+    },
+  ];
+
+  return (
+    <section className="py-20 bg-gray-50">
+      <Container>
+        <div className="text-center mb-16">
+          <h2
+            className="text-gray-900"
+            style={{ fontSize: "48px", fontWeight: 500 }}
+          >
+            <span>Choose </span>
+            <span
+              style={{
+                fontFamily: "Instrument Serif, serif",
+                fontStyle: "italic",
+              }}
+              className="text-orange-500"
+            >
+              your plan
+            </span>
+          </h2>
+          <p
+            className="mt-4 text-gray-600 max-w-3xl mx-auto"
+            style={{ fontSize: "16px" }}
+          >
+            We turn Instagram into a simple, predictable channel for credibility
+            and patient acquisition, with almost no time spent by you.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          {plans.map((plan, index) => (
+            <PricingCard key={index} {...plan} />
+          ))}
+        </div>
+
+        <p
+          className="text-center text-gray-600 italic"
+          style={{ fontSize: "14px" }}
+        >
+          Most practices recoup cost in 2–6 visits. Transparent month-to-month.
+        </p>
+      </Container>
+    </section>
+  );
+}
+
+function PricingCard({ name, tagline, price, features }) {
+  return (
+    <div className="rounded-3xl bg-white p-8 border border-gray-200 flex flex-col">
+      <div className="mb-6">
+        <h3
+          className="text-gray-900 mb-2"
+          style={{ fontSize: "24px", fontWeight: 600 }}
+        >
+          {name}
+        </h3>
+        <p className="text-gray-600" style={{ fontSize: "14px" }}>
+          {tagline}
+        </p>
+      </div>
+
+      <div
+        className="text-gray-900 mb-6"
+        style={{ fontSize: "32px", fontWeight: 600 }}
+      >
+        {price}
+      </div>
+
+      <div className="space-y-3 mb-8 flex-grow">
+        {features.map((feature, index) => (
+          <div key={index} className="flex items-start gap-3">
+            <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center mt-0.5">
+              <Check className="h-3 w-3 text-gray-600" />
+            </div>
+            <span className="text-gray-900" style={{ fontSize: "16px" }}>
+              {feature}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <Button href="#book" icon={ChevronRight}>
+        Choose {name}
+      </Button>
+    </div>
+  );
+}
+
+function ROIMath() {
+  const roiCards = [
+    { specialty: "Chiropractor", calculation: "5–6 visits ≈ $399" },
+    { specialty: "Plastic surgeon", calculation: "< 1 procedure ≈ $399" },
+    { specialty: "Dermatologist", calculation: "1–2 consults ≈ $399" },
+  ];
+
+  return (
+    <section className="py-20 bg-white">
+      <Container>
+        <div
+          className="rounded-3xl p-12 lg:p-16"
+          style={{
+            background: "#F97316",
+          }}
+        >
+          <div className="flex items-start justify-between">
+            <div className="text-white flex-1 flex flex-col">
+              <div>
+                <h2 style={{ fontSize: "48px", fontWeight: 500 }}>
+                  <span>ROI math </span>
+                  <span
+                    style={{
+                      fontFamily: "Instrument Serif, serif",
+                      fontStyle: "italic",
+                    }}
+                  >
+                    (simple & conservative)
+                  </span>
+                </h2>
+                <p className="mt-6" style={{ fontSize: "16px" }}>
+                  For most practices, just 2–6 patient visits cover the monthly
+                  cost.
+                </p>
+              </div>
+
+              <div className="mt-auto pt-8">
+                <Button href="#book" variant="secondary" icon={ChevronRight}>
+                  Let's get started
+                </Button>
+              </div>
+            </div>
+
+            <div className="w-1/4 flex flex-col ml-12">
+              <div className="space-y-4">
+                {roiCards.map((card, index) => (
+                  <ROICard key={index} {...card} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function ROICard({ specialty, calculation }) {
+  return (
+    <div
+      className="rounded-2xl bg-white p-6"
+      style={{
+        height: "120px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <div className="text-gray-600 mb-2" style={{ fontSize: "14px" }}>
+        {specialty}
+      </div>
+      <div
+        className="text-gray-900"
+        style={{ fontSize: "24px", fontWeight: 600 }}
+      >
+        {calculation}
+      </div>
+    </div>
+  );
+}
+
+function FAQs() {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const faqs = [
+    {
+      question: "Is this compliant with medical marketing rules?",
+      answer:
+        "We avoid patient-identifiable info, make no medical claims, and keep messaging educational and ethical. You approve all content before posting.",
+    },
+    {
+      question: "What if I don't like a post?",
+      answer:
+        "Each plan includes revisions (1 round on Essentials, 2 rounds on Hands‑Off). We refine until it fits your brand and voice.",
+    },
+    {
+      question: "Can you work with my existing brand guidelines?",
+      answer:
+        "Absolutely. Share your logo, colors, past posts, and we'll align with your visual language.",
+    },
+    {
+      question: "Do you handle comments and DMs?",
+      answer:
+        "We focus on content creation, scheduling, and reporting. Engagement management can be scoped as an add‑on if needed.",
+    },
+  ];
+
+  return (
+    <section className="py-20 bg-gray-50">
+      <Container>
+        <div className="text-center mb-16">
+          <h2
+            className="text-gray-900"
+            style={{ fontSize: "48px", fontWeight: 500 }}
+          >
+            <span>Frequently </span>
+            <span
+              style={{
+                fontFamily: "Instrument Serif, serif",
+                fontStyle: "italic",
+              }}
+              className="text-orange-500"
+            >
+              asked questions
+            </span>
+          </h2>
+          <p
+            className="mt-4 text-gray-600 max-w-3xl mx-auto"
+            style={{ fontSize: "16px" }}
+          >
+            We turn Instagram into a simple, predictable channel for credibility
+            and patient acquisition, with almost no time spent by you.
+          </p>
+        </div>
+
+        <div className="max-w-4xl mx-auto space-y-4">
+          {faqs.map((faq, index) => (
+            <FAQItem
+              key={index}
+              question={faq.question}
+              answer={faq.answer}
+              isOpen={openIndex === index}
+              onClick={() => setOpenIndex(openIndex === index ? null : index)}
+            />
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function FAQItem({ question, answer, isOpen, onClick }) {
+  return (
+    <div
+      className="rounded-2xl bg-white border border-gray-200 overflow-hidden transition-all duration-300"
+      onClick={onClick}
+    >
+      <button
+        className="w-full flex items-center justify-between p-6 text-left"
+        style={{ cursor: "pointer" }}
+      >
+        <span
+          className="text-gray-900"
+          style={{ fontSize: "18px", fontWeight: 500 }}
+        >
+          {question}
+        </span>
+        <span
+          className="text-gray-900 text-2xl transition-transform duration-300"
+          style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)" }}
+        >
+          +
+        </span>
+      </button>
+
+      <div
+        className="overflow-hidden transition-all duration-300"
+        style={{
+          maxHeight: isOpen ? "200px" : "0",
+          opacity: isOpen ? 1 : 0,
+        }}
+      >
+        <div className="px-6 pb-6 text-gray-600" style={{ fontSize: "16px" }}>
+          {answer}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FinalCTA() {
+  return (
+    <section className="py-20 bg-white">
+      <Container>
+        <div className="text-center max-w-4xl mx-auto">
+          <h2
+            className="text-gray-900"
+            style={{ fontSize: "48px", fontWeight: 500 }}
+          >
+            <span>Ready to free up your time </span>
+            <span
+              style={{
+                fontFamily: "Instrument Serif, serif",
+                fontStyle: "italic",
+              }}
+              className="text-orange-500"
+            >
+              and keep your clinic visible?
+            </span>
+          </h2>
+
+          <p className="mt-6 text-gray-900" style={{ fontSize: "18px" }}>
+            Book a 15-minute intro call and lets work together!
+          </p>
+
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <Button href="#book" icon={ArrowRight}>
+              Schedule your intro call
+            </Button>
+            <Button href="#pricing" variant="secondary" icon={ChevronRight}>
+              View pricing
+            </Button>
+          </div>
+
+          <p className="mt-8 text-gray-600 italic" style={{ fontSize: "14px" }}>
+            We work with only 4–5 practices at a time to maintain quality.
+          </p>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function Footer() {
+  const [copiedEmail, setCopiedEmail] = useState(false);
+  const [showEmail, setShowEmail] = useState(false);
+  const email = "hello@numa.com";
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(email);
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2000);
+  };
+
+  const socialLinks = [
+    { label: "EMAIL", href: null, isEmail: true },
+    { label: "TWITTER/X", href: "https://twitter.com" },
+    { label: "LINKEDIN", href: "https://linkedin.com" },
+    { label: "INSTAGRAM", href: "https://instagram.com" },
+  ];
+
+  return (
+    <footer style={{ backgroundColor: "#222222" }} className="text-white py-16">
+      <Container>
+        <div className="flex flex-wrap items-center justify-between gap-8 mb-16">
+          {socialLinks.map((link) =>
+            link.isEmail ? (
+              <button
+                key={link.label}
+                onClick={handleCopyEmail}
+                onMouseEnter={() => setShowEmail(true)}
+                onMouseLeave={() => setShowEmail(false)}
+                className="relative flex items-center gap-3 text-white hover:text-orange-500 transition-colors"
+                style={{
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  letterSpacing: "0.05em",
+                }}
+              >
+                <span>{showEmail ? email : link.label}</span>
+                <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-gray-600 transition-colors">
+                  <Copy className="h-4 w-4" />
+                </div>
+                {copiedEmail && (
+                  <span className="absolute -bottom-6 left-0 text-xs text-orange-500">
+                    Copied!
+                  </span>
+                )}
+              </button>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-white hover:text-orange-500 transition-colors"
+                style={{
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  letterSpacing: "0.05em",
+                }}
+              >
+                <span>{link.label}</span>
+                <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-gray-600 transition-colors">
+                  <MoveUpRight className="h-4 w-4" />
+                </div>
+              </a>
+            )
+          )}
+        </div>
+
+        <div className="mb-12">
+          <div className="flex items-center gap-4" style={{ width: "100%" }}>
+            <div
+              style={{
+                width: "200px",
+                height: "200px",
+                backgroundColor: "#F97316",
+                borderRadius: "24px",
+                flexShrink: 0,
+              }}
+            ></div>
+            <div
+              className="text-white flex-1"
+              style={{
+                fontSize: "200px",
+                fontWeight: 700,
+                lineHeight: "1",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              numa
+            </div>
+          </div>
+        </div>
+
+        <div
+          className="flex flex-wrap items-center justify-between gap-4 text-gray-400"
+          style={{ fontSize: "14px" }}
+        >
+          <div>Copyright © 2025 Numa Works</div>
+          <a
+            href="#terms"
+            className="hover:text-white transition-colors underline"
+          >
+            Terms & Conditions
+          </a>
+        </div>
+      </Container>
+    </footer>
   );
 }
