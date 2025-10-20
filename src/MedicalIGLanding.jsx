@@ -36,9 +36,9 @@ export default function MedicalIGLanding() {
     <div className="min-h-screen bg-gray-50 text-gray-900">
       <Nav />
       <Hero scrollY={scrollY} />
-      <Portfolio />
       <PainPoints />
       <Solution />
+      <Portfolio />
       <Process />
       <Pricing />
       <ROIMath />
@@ -100,32 +100,43 @@ function Nav() {
     <header className="sticky top-0 z-50 bg-white backdrop-blur-md border-b border-gray-200">
       <Container>
         <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="h-8 w-8 bg-orange-500 rounded"></div>
-            <span className="text-2xl font-bold tracking-tight">numa</span>
-          </div>
+          <a href="#" className="flex items-center gap-2">
+            <div className="h-10 w-10 bg-orange-500 rounded-lg"></div>
+            <span
+              className="text-2xl font-bold"
+              style={{ letterSpacing: "-0.08em" }}
+            >
+              numa
+            </span>
+          </a>
 
           <div className="hidden items-center gap-8 md:flex">
-            <a
-              href="#process"
-              className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
-            >
-              How it works
-            </a>
             <a
               href="#portfolio"
               className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
             >
               Our Work
             </a>
+            <a
+              href="#plans"
+              className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              Pricing
+            </a>
+            <a
+              href="#faq"
+              className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              FAQ
+            </a>
             <Button href="#book" icon={ArrowRight}>
-              Schedule your intro call
+              Book a 15-min intro call
             </Button>
           </div>
 
           <div className="md:hidden">
             <Button href="#book" icon={ArrowRight}>
-              Schedule call
+              Book a call
             </Button>
           </div>
         </div>
@@ -1038,8 +1049,11 @@ function Footer() {
                 }}
               >
                 <span>{showEmail ? email : link.label}</span>
-                <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-gray-600 transition-colors">
-                  <Copy className="h-4 w-4" />
+                <div
+                  className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors"
+                  style={{ backgroundColor: "#B8B6B6" }}
+                >
+                  <Copy className="h-4 w-4" style={{ stroke: "#222222" }} />
                 </div>
                 {copiedEmail && (
                   <span className="absolute -bottom-6 left-0 text-xs text-orange-500">
@@ -1061,8 +1075,14 @@ function Footer() {
                 }}
               >
                 <span>{link.label}</span>
-                <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-gray-600 transition-colors">
-                  <MoveUpRight className="h-4 w-4" />
+                <div
+                  className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors"
+                  style={{ backgroundColor: "#B8B6B6" }}
+                >
+                  <MoveUpRight
+                    className="h-4 w-4"
+                    style={{ stroke: "#222222" }}
+                  />
                 </div>
               </a>
             )
@@ -1070,28 +1090,27 @@ function Footer() {
         </div>
 
         <div className="mb-12">
-          <div className="flex items-center gap-4" style={{ width: "100%" }}>
-            <div
-              style={{
-                width: "200px",
-                height: "200px",
-                backgroundColor: "#F97316",
-                borderRadius: "24px",
-                flexShrink: 0,
-              }}
-            ></div>
-            <div
-              className="text-white flex-1"
-              style={{
-                fontSize: "200px",
-                fontWeight: 700,
-                lineHeight: "1",
-                letterSpacing: "-0.02em",
-              }}
+          <svg
+            viewBox="0 0 1200 350"
+            className="w-full"
+            style={{ maxWidth: "100%", height: "auto" }}
+          >
+            {/* Orange rounded rectangle */}
+            <rect x="0" y="0" width="350" height="350" rx="32" fill="#F97316" />
+
+            {/* "numa" text */}
+            <text
+              x="420"
+              y="280"
+              fill="white"
+              fontSize="320"
+              fontWeight="700"
+              fontFamily="Inter, sans-serif"
+              letterSpacing="-25.6"
             >
               numa
-            </div>
-          </div>
+            </text>
+          </svg>
         </div>
 
         <div
